@@ -23,7 +23,7 @@ test('dialog and look page photos never exceed their sharpness', async ({ page }
   await page.getByTestId('plate').first().click()
   await expect(page.getByTestId('look-dialog')).toBeVisible()
   expect(await overBudget(page)).toEqual([])
-  for (const slug of ['peach-velvet', 'berry-garden', 'rosy-bloom', 'peony-blush', 'soft-daylight']) {
+  for (const slug of ['peach-velvet', 'pearl-veil', 'rosy-bloom', 'wildflower', 'soft-daylight']) {
     await page.goto(`/vi/looks/${slug}`)
     expect(await overBudget(page), slug).toEqual([])
   }

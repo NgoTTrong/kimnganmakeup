@@ -1,22 +1,22 @@
 {
-  "_note": "Single source for the image pipeline and the site. file = hash suffix in assets/. tiles = 2x2 cells used (0 TL,1 TR,2 BL,3 BR), first is the cover. eff = sharp pixels of a served file, judged by eye at 100%: shown CSS width x DPR must stay at or below it. Asset #19 is excluded (another artist's watermark). drive = files in assets/drive/ (originals from the Google Drive folder, numbered by folder order), each a whole photo, first is the cover.",
+  "_note": "Single source for the image pipeline and the site. file = hash suffix in assets/. tiles = 2x2 cells used (0 TL,1 TR,2 BL,3 BR), first is the cover. eff = sharp pixels of a served file, judged by eye at 100%: shown CSS width x DPR must stay at or below it. Asset #19 is excluded (another artist's watermark). drive = files in assets/drive/ (originals from Ngân's Google Drive folder, numbered NN.jpg as in its _index.txt), each a whole photo, first is the cover.",
   "looks": [
     { "slug": "peach-velvet", "file": "e99600831d0163af4e2766e19c485887", "tiles": [0, 3, 2, 1], "eff": 430 },
-    { "slug": "berry-garden", "drive": ["02", "04", "03"], "eff": 900 },
+    { "slug": "pearl-veil", "drive": ["17", "16"], "eff": 900 },
     { "slug": "rose-muse", "file": "222a987aacecb4d8ae1b325df92aefde", "tiles": [0, 1, 2, 3], "eff": 670 },
-    { "slug": "brick-curl", "drive": ["26", "27", "29", "31"], "eff": 900 },
+    { "slug": "tulle-bun", "drive": ["26", "27", "28"], "eff": 900 },
     { "slug": "dusty-rose", "file": "914d7463eb0359628ff287e65b497479", "tiles": [1, 0, 2, 3], "eff": 430 },
-    { "slug": "ivory-shirt", "drive": ["16", "15", "18", "20"], "eff": 670 },
+    { "slug": "white-wave", "drive": ["78", "79"], "eff": 670 },
     { "slug": "coral-crush", "file": "6afaf021af07ed6e3559c400981ec8e5", "tiles": [0, 1, 3, 2], "eff": 670 },
-    { "slug": "peony-blush", "drive": ["46", "49"], "eff": 900 },
+    { "slug": "wildflower", "drive": ["43", "44"], "eff": 900 },
     { "slug": "sweet-pink", "file": "a74937ac4768b53eeb54d29c7cf9ff44", "tiles": [1, 0, 2, 3], "eff": 430 },
-    { "slug": "silk-braids", "drive": ["50", "47", "48"], "eff": 900 },
+    { "slug": "crimson-braid", "drive": ["64", "63"], "eff": 670 },
     { "slug": "porcelain-doll", "file": "e15d59e41a8d236fbe395a192a54ebc2", "tiles": [2, 1, 0, 3], "eff": 430 },
-    { "slug": "winged-sculpt", "drive": ["40", "39", "41"], "eff": 900 },
+    { "slug": "game-day", "drive": ["75", "77", "76"], "eff": 670 },
     { "slug": "rosy-bloom", "file": "7b762902221b66fc32bc6c6ebd4fe3b9", "tiles": [2, 1], "eff": 670 },
-    { "slug": "twin-braids", "drive": ["06", "05", "07", "08"], "eff": 670 },
+    { "slug": "black-lace", "drive": ["80", "81"], "eff": 600 },
     { "slug": "cherry-blush", "file": "1ebfff4af783bd3d57df9bfa62fd53a5", "tiles": [0, 3, 2, 1], "eff": 430 },
-    { "slug": "cream-lace", "drive": ["22", "23", "24"], "eff": 900 },
+    { "slug": "long-wave", "drive": ["36", "37"], "eff": 670 },
     { "slug": "bare-glow", "file": "aad4caaafdd7e48f21e7e49870a82d1a", "tiles": [0, 3, 1, 2], "eff": 430 },
     { "slug": "soft-daylight", "file": "a6fc03138a07bd4d12912d3997e46ec8", "tiles": [0, 1, 2, 3], "eff": 430 }
   ],
@@ -27,9 +27,9 @@
     { "slug": "cherry-clip", "file": "be7b85e81fadfe1d1186954eca84e3e1", "eff": 630 },
     { "slug": "honey-bronze", "file": "4b47e8611ef22701a9814ef5a95b8aae", "eff": 630 },
     { "slug": "morning-coral", "file": "621bd65c409933fe9afc3a721a03f56a", "eff": 630 },
-    { "slug": "lace-bloom", "drive": "38", "eff": 600 },
-    { "slug": "tangerine", "drive": "33", "eff": 630 },
-    { "slug": "black-ribbon", "drive": "42", "eff": 630 }
+    { "slug": "white-lily", "drive": "12", "eff": 630 },
+    { "slug": "garden-scarf", "drive": "57", "eff": 630 },
+    { "slug": "red-qipao", "drive": "74", "eff": 630 }
   ],
   "artist": { "file": "a75d6d19dac969133fd8bd79fdc28db6", "eff": 450 }
 }

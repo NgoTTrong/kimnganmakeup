@@ -46,7 +46,7 @@ test('look page: angles, neighbours, booking', async ({ page }) => {
   await page.goto('/vi/looks/rosy-bloom')
   await expect(page.locator('h1')).toHaveText('Rosy Bloom')
   await expect(page.locator('.lp__grid img')).toHaveCount(2)
-  await expect(page.locator('a[rel=next]')).toHaveAttribute('href', '/vi/looks/twin-braids')
+  await expect(page.locator('a[rel=next]')).toHaveAttribute('href', '/vi/looks/black-lace')
   await expect(page.getByTestId('book-facebook')).toBeVisible()
 })
 
