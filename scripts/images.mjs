@@ -1,5 +1,6 @@
 // Builds every served image from assets/ (run: npm run assets).
-// Looks: cut the 2x2 collages into single cells at full resolution, in display order.
+// Looks: cut the 2x2 collages into single cells at full resolution, in display order;
+// sets from assets/drive/ are whole photos, downsized.
 // Never upscales; sizes on the page are capped by each photo's measured sharpness (see photos.json).
 import sharp from 'sharp'
 import fs from 'node:fs'
@@ -17,15 +18,27 @@ const find = (hash) => {
 }
 const mk = (d) => fs.mkdirSync(d, { recursive: true })
 const sizes = { looks: {}, moments: {}, artist: null }
+// originals from the Google Drive folder, named by folder position (assets/drive/NN.jpg)
+const drive = (n) => path.join(SRC, 'drive', `${n}.jpg`)
+// whole photo, downsized only (sharp drops EXIF unless asked to keep it)
+const single = (src, out, width) =>
+  sharp(src).rotate().resize({ width, withoutEnlargement: true }).webp({ quality: 82 }).toFile(out)
 
-// 1 · looks: 2x2 collages → cells, trimmed 3px to drop the seam
+// 1 · looks: 2x2 collages → cells, trimmed 3px to drop the seam; drive sets → whole photos ≤ 1000 px wide
 for (const look of manifest.looks) {
-  const src = find(look.file)
-  const { width, height } = await sharp(src).metadata()
-  const cw = width / 2, ch = height / 2
   const dir = path.join(PUB, 'looks', look.slug)
   mk(dir)
   sizes.looks[look.slug] = []
+  if (look.drive) {
+    for (const [i, n] of look.drive.entries()) {
+      const out = await single(drive(n), path.join(dir, `${i}.webp`), 1000)
+      sizes.looks[look.slug].push([out.width, out.height])
+    }
+    continue
+  }
+  const src = find(look.file)
+  const { width, height } = await sharp(src).metadata()
+  const cw = width / 2, ch = height / 2
   for (const [i, cell] of look.tiles.entries()) {
     const box = { left: Math.round((cell % 2) * cw) + 3, top: Math.round(Math.floor(cell / 2) * ch) + 3, width: Math.round(cw) - 6, height: Math.round(ch) - 6 }
     const out = await sharp(src).rotate().extract(box).webp({ quality: 82 }).toFile(path.join(dir, `${i}.webp`))
@@ -36,7 +49,7 @@ for (const look of manifest.looks) {
 // 2 · moments and the artist portrait: single photos, at most 900 px wide
 mk(path.join(PUB, 'moments'))
 for (const m of manifest.moments) {
-  const out = await sharp(find(m.file)).rotate().resize({ width: 900, withoutEnlargement: true }).webp({ quality: 82 }).toFile(path.join(PUB, 'moments', `${m.slug}.webp`))
+  const out = await single(m.drive ? drive(m.drive) : find(m.file), path.join(PUB, 'moments', `${m.slug}.webp`), 900)
   sizes.moments[m.slug] = [out.width, out.height]
 }
 {

@@ -30,6 +30,14 @@ const TEXT: Record<string, Omit<Look, 'slug' | 'photos'>> = {
   'cherry-blush': { name: 'Cherry Blush', tone: 'hong', pans: ['#E07F8C', '#F3B7BC', '#8A5A5A'], note: { vi: 'Má hồng anh đào, môi căng mọng.', ko: '체리빛 볼, 도톰한 입술.', ru: 'Вишнёвые румяна, сочные губы.' } },
   'bare-glow': { name: 'Bare Glow', tone: 'nude', pans: ['#D79A8A', '#E9C0B0', '#A47B71'], note: { vi: 'Gần như không trang điểm — da khoẻ, môi tự nhiên.', ko: '안 한 듯한 메이크업 — 건강한 피부, 자연스러운 입술.', ru: 'Почти без макияжа — здоровая кожа, естественные губы.' } },
   'soft-daylight': { name: 'Soft Daylight', tone: 'nude', pans: ['#C98473', '#E2B4A2', '#996E61'], note: { vi: 'Tông nude ấm cho ánh sáng ban ngày.', ko: '낮 빛에 어울리는 따뜻한 누드 톤.', ru: 'Тёплый нюд для дневного света.' } },
+  'berry-garden': { name: 'Berry Garden', tone: 'hong', pans: ['#E8909A', '#EF7F7A', '#A8746A'], note: { vi: 'Má hồng điểm nhũ, môi cam hồng căng mọng, nơ đỏ cài tóc.', ko: '글리터 포인트 핑크 볼, 촉촉한 코랄 핑크 립, 빨간 리본.', ru: 'Розовые румяна с блёстками, сочные коралловые губы, красный бант.' } },
+  'brick-curl': { name: 'Brick Curl', tone: 'tram', pans: ['#D98A7E', '#B5544D', '#4A3330'], note: { vi: 'Eyeliner sắc, môi đỏ gạch, tóc xoăn lọn nhuộm nâu.', ko: '선명한 아이라인, 브릭 레드 립, 브라운 컬 헤어.', ru: 'Чёткие стрелки, кирпичные губы, каштановые локоны.' } },
+  'ivory-shirt': { name: 'Ivory Shirt', tone: 'dao', pans: ['#E9A28E', '#C9645C', '#8F6C5E'], note: { vi: 'Nền mỏng, má cam đào, môi đỏ nhẹ, tóc sóng dài.', ko: '얇은 베이스, 피치 볼, 은은한 레드 립, 긴 웨이브.', ru: 'Лёгкий тон, персиковые щёки, мягкий красный, длинные волны.' } },
+  'peony-blush': { name: 'Peony Blush', tone: 'dao', pans: ['#F08C80', '#E9707A', '#C99A9A'], note: { vi: 'Má đào phủ rộng, mắt nhũ hồng, hoa mẫu đơn cài tóc.', ko: '넓게 펴 바른 피치 볼, 핑크 글리터 눈매, 작약 헤어 장식.', ru: 'Широкие персиковые румяна, розовое сияние век, пионы в волосах.' } },
+  'silk-braids': { name: 'Silk Braids', tone: 'hong', pans: ['#E7A7B2', '#D9848C', '#7A5C5A'], note: { vi: 'Áo dài trắng, tóc tết bồng, má hồng điểm sao nhũ.', ko: '흰 아오자이, 볼륨 땋은 머리, 별 글리터 핑크 볼.', ru: 'Белое аозай, объёмные косы, румяна со звёздочками.' } },
+  'winged-sculpt': { name: 'Winged Sculpt', tone: 'tram', pans: ['#C98A6E', '#C77A5E', '#2E2420'], note: { vi: 'Mắt kẻ cánh đậm, tạo khối rõ, môi nude cam, tóc buộc thấp.', ko: '진한 윙 아이라인, 또렷한 윤곽, 누드 오렌지 립, 로우 포니테일.', ru: 'Выразительные стрелки, чёткая скульптура, нюдово-оранжевые губы.' } },
+  'twin-braids': { name: 'Twin Braids', tone: 'hong', pans: ['#EBA9AA', '#E3857E', '#8C6B66'], note: { vi: 'Nền sáng trong, má hồng nhạt, mi cong, tóc tết hai bên.', ko: '맑은 베이스, 연한 핑크 볼, 컬링 속눈썹, 양갈래 땋은 머리.', ru: 'Светлый прозрачный тон, нежный румянец, две косы.' } },
+  'cream-lace': { name: 'Cream Lace', tone: 'nude', pans: ['#E6A39C', '#C98C86', '#8A6A5E'], note: { vi: 'Má hồng vắt ngang sống mũi, môi nude hồng, tóc rẽ ngôi giữa.', ko: '콧등까지 이어진 핑크 볼, 누드 핑크 립, 가운데 가르마.', ru: 'Румяна через переносицу, нюдово-розовые губы, прямой пробор.' } },
 }
 
 const MOMENT_TEXT: Record<string, Omit<Moment, 'slug' | 'photo'>> = {
@@ -39,6 +47,9 @@ const MOMENT_TEXT: Record<string, Omit<Moment, 'slug' | 'photo'>> = {
   'cherry-clip': { name: 'Cherry Clip', note: { vi: 'Mắt to tròn, môi hồng, kẹp tóc nhỏ.', ko: '동그란 눈매, 핑크 립, 작은 헤어핀.', ru: 'Округлые глаза, розовые губы, заколка.' } },
   'honey-bronze': { name: 'Honey Bronze', note: { vi: 'Mắt nâu mật ong, tóc highlight.', ko: '허니 브라운 눈매, 하이라이트 헤어.', ru: 'Медово-коричневые глаза, мелирование.' } },
   'morning-coral': { name: 'Morning Coral', note: { vi: 'Má san hô, mái thưa, da căng.', ko: '코랄 볼, 시스루 뱅, 탱탱한 피부.', ru: 'Коралловые щёки, лёгкая чёлка.' } },
+  'lace-bloom': { name: 'Lace Bloom', note: { vi: 'Tóc thả bồng, má hồng tròn, môi hồng ngọt.', ko: '볼륨 있는 생머리, 동그란 핑크 볼, 달콤한 핑크 립.', ru: 'Пышные волосы, круглые румяна, сладкие розовые губы.' } },
+  tangerine: { name: 'Tangerine', note: { vi: 'Nền ấm, má cam, eyeliner mảnh.', ko: '따뜻한 베이스, 오렌지 볼, 얇은 아이라인.', ru: 'Тёплый тон, оранжевые щёки, тонкая стрелка.' } },
+  'black-ribbon': { name: 'Black Ribbon', note: { vi: 'Tóc búi cao, khăn đen quấn cổ, má hồng nhẹ.', ko: '높은 번, 검은 넥 스카프, 은은한 핑크 볼.', ru: 'Высокий пучок, чёрный шарф на шее, лёгкий румянец.' } },
 }
 
 const S = sizes as unknown as { looks: Record<string, [number, number][]>; moments: Record<string, [number, number]>; artist: [number, number] }

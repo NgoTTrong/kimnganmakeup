@@ -8,10 +8,14 @@ import { locales } from '@/i18n/config'
 const pub = (src: string) => path.join(__dirname, '../../public', src)
 
 describe('looks', () => {
-  test('ten looks with unique slugs, four angles each except Rosy Bloom (two)', () => {
-    expect(looks).toHaveLength(10)
-    expect(new Set(looks.map((l) => l.slug)).size).toBe(10)
-    for (const l of looks) expect(l.photos.length, l.slug).toBe(l.slug === 'rosy-bloom' ? 2 : 4)
+  test('eighteen looks with unique slugs, one photo per manifest tile or drive file', () => {
+    expect(looks).toHaveLength(18)
+    expect(new Set(looks.map((l) => l.slug)).size).toBe(18)
+    for (const [i, l] of looks.entries()) {
+      const m = photos.looks[i] as { tiles?: number[]; drive?: string[] }
+      expect(l.photos.length, l.slug).toBe((m.tiles ?? m.drive)!.length)
+      expect(l.photos.length, l.slug).toBeGreaterThanOrEqual(2)
+    }
   })
 
   test('every look has a name, three shades and a note in each language', () => {
@@ -31,8 +35,8 @@ describe('looks', () => {
     }
   })
 
-  test('six moments with text in every language', () => {
-    expect(moments).toHaveLength(6)
+  test('nine moments with text in every language', () => {
+    expect(moments).toHaveLength(9)
     for (const m of moments) for (const loc of locales) expect(m.note[loc]).toBeTruthy()
   })
 

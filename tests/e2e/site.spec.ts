@@ -8,7 +8,7 @@ for (const [locale, title] of [['vi', 'Bộ sưu tập'], ['ko', '컬렉션'], [
     await expect(page.locator('html')).toHaveAttribute('lang', locale)
     await expect(page.locator('h1')).toHaveText('Kim Ngân')
     await expect(page.getByRole('heading', { name: title })).toBeAttached()
-    await expect(page.getByTestId('plate')).toHaveCount(10)
+    await expect(page.getByTestId('plate')).toHaveCount(18)
     await expect(page.getByTestId('book-facebook')).toHaveAttribute('href', /facebook\.com/)
     await expect(page.getByTestId('book-instagram')).toHaveAttribute('href', /instagram\.com\/___vnkn___/)
     expect(errors).toEqual([])
@@ -32,7 +32,7 @@ test('language switch keeps the page', async ({ page }) => {
 
 test('dialog opens from a frame and closes', async ({ page }) => {
   await page.goto('/vi')
-  await page.getByTestId('plate').nth(1).click()
+  await page.getByTestId('plate').nth(2).click()
   const dialog = page.getByTestId('look-dialog')
   await expect(dialog).toBeVisible()
   await expect(dialog.getByRole('heading', { name: 'Rose Muse' })).toBeVisible()
@@ -46,7 +46,7 @@ test('look page: angles, neighbours, booking', async ({ page }) => {
   await page.goto('/vi/looks/rosy-bloom')
   await expect(page.locator('h1')).toHaveText('Rosy Bloom')
   await expect(page.locator('.lp__grid img')).toHaveCount(2)
-  await expect(page.locator('a[rel=next]')).toHaveAttribute('href', '/vi/looks/cherry-blush')
+  await expect(page.locator('a[rel=next]')).toHaveAttribute('href', '/vi/looks/twin-braids')
   await expect(page.getByTestId('book-facebook')).toBeVisible()
 })
 
