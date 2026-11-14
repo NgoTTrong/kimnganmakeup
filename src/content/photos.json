@@ -1,5 +1,5 @@
 {
-  "_note": "Single source for the image pipeline and the site. drive = files in assets/drive/ (originals from Ngân's Google Drive folder https://drive.google.com/drive/folders/1jRpAnU3v618qEEPoRbBxfLYEsEWf7kuF, numbered NN.jpg as in its _index.txt), each a whole photo, first is the cover. eff = sharp pixels of a served file, judged by eye at 100%: shown CSS width x DPR must stay at or below it. Never used: 35-37 (brand logos), 01/44/45 (collages, landscape duplicates), 09/11/13/14 (other artists backstage).",
+  "_note": "Single source for the image pipeline and the site. drive = files in assets/drive/ (originals from Ngân's Google Drive folder, numbered NN.jpg as in its _index.txt), each a whole photo, first is the cover. eff = sharp pixels of a served file, judged by eye at 100%: shown CSS width x DPR must stay at or below it. Never used: 35-37 (brand logos), 01/44/45 (collages, landscape duplicates), 09/11/13/14 (other artists backstage).",
   "looks": [
     { "slug": "peony-blush", "drive": ["49", "50"], "eff": 900 },
     { "slug": "berry-garden", "drive": ["02", "04", "03"], "eff": 900 },
